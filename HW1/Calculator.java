@@ -1,4 +1,4 @@
-package HW1;
+package unittests.HW1;
 
 public class Calculator {
     public static void main(String[] args) {
@@ -21,5 +21,3 @@ public class Calculator {
         return result;
     }
 }
- 16 changes: 16 additions & 0 deletions16  
-HW1/TestCalculator.java

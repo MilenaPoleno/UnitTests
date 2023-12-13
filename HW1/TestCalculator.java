@@ -1,6 +1,4 @@
-
-@@ -0,0 +1,16 @@
-package HW1;
+package unittests.HW1;
 
 import org.assertj.core.util.VisibleForTesting;
 import static org.assertj.core.api.Assertions.*;
