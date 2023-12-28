@@ -1,26 +1,24 @@
 package unittests.HW6;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CompareAverageList {
-    public double getAverage(List<Integer> list)  {
-        if (list.size() == 0) {
-            throw new RuntimeException("Список пуст");
-        }
-        double sum = 0;
-        for (Integer integer : list) {
-            sum += integer;
-        }
-        return sum / list.size();
+public class ListsCompare {
+    public double average(List<Integer> request) {
+        return request.stream()
+                .mapToDouble(d -> d)
+                .average()
+                .orElse(0.0);
     }
 
-    public String compareAverage(List<Integer> list1, List<Integer> list2) {
-        double mean1 = getAverage(list1);
-        double mean2 = getAverage(list2);
-        if (mean1 > mean2) {
-            return "Первый список имеет большее среднее значение";
-        } else if (mean1 < mean2) {
+    public String compareAverage(List<Integer> listOne, List<Integer> listTwo) {
+        double resultListOne = average(listOne);
+        double resultListTwo = average(listTwo);
+
+        if (resultListTwo > resultListOne) {
             return "Второй список имеет большее среднее значение";
+        } else if (resultListTwo < resultListOne) {
+            return "Первый список имеет большее среднее значение";
         } else {
             return "Средние значения равны";
         }
